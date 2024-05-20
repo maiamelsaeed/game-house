@@ -4,6 +4,7 @@ import apiClient from "../services/api-client";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
+import GamesCardContainer from "./GamesCardContainer";
 
 const GameGrid = () => {
   const { games, error, isLoading } = useGames();
@@ -17,9 +18,15 @@ const GameGrid = () => {
         spacing={10}
       >
         {isLoading &&
-          skeletons.map((skeleton) => <GameCardSkeleton key={skeleton} />)}
+          skeletons.map((skeleton) => (
+            <GamesCardContainer>
+              <GameCardSkeleton key={skeleton} />
+            </GamesCardContainer>
+          ))}
         {games.map((game) => (
-          <GameCard key={game.id} game={game} />
+          <GamesCardContainer>
+            <GameCard key={game.id} game={game} />
+          </GamesCardContainer>
         ))}
       </SimpleGrid>
     </>
