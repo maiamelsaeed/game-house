@@ -24,10 +24,11 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
     <>
       {isLoading &&
         skeletons.map((skeleton) => <GenreListSkeleton key={skeleton} />)}
-      <Heading fontSize="2xl" marginBottom={3}>
-        Genres
-      </Heading>
+
       <List>
+        <Heading fontSize="2xl" marginBottom={3}>
+          Genres
+        </Heading>
         {data.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>
