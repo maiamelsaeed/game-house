@@ -15,7 +15,7 @@ const NavBar = ({ onSearch }: Props) => {
         src={logo}
         marginLeft={2}
         marginRight={2}
-        boxSize="45px"
+        boxSize="60px"
       />
       <SearchInput onSearch={onSearch} />
       <ColorModeSwitch />
