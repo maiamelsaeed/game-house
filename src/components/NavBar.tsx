@@ -3,11 +3,11 @@ import logo from "../assets/logo.png";
 import ColorModeSwitch from "./ColorModeSwitch";
 import SearchInput from "./SearchInput";
 
-interface Props {
-  onSearch: (searchText: string) => void;
-}
+// interface Props {
+//   onSearch: (searchText: string) => void;
+// }
 
-const NavBar = ({ onSearch }: Props) => {
+const NavBar = () => {
   return (
     <HStack padding="10px">
       <Image
@@ -17,7 +17,7 @@ const NavBar = ({ onSearch }: Props) => {
         marginRight={2}
         boxSize="60px"
       />
-      <SearchInput onSearch={onSearch} />
+      <SearchInput />
       <ColorModeSwitch />
     </HStack>
   );
